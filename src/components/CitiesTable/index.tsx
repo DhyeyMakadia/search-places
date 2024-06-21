@@ -15,9 +15,9 @@ const CitiesTable: FC<Props> = ({ data, isLoading, emptyDataMessage }) => {
         <thead>
           <tr>
             <th>#</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>Handle</th>
+            <th>Place Name</th>
+            <th>Country</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +35,12 @@ const CitiesTable: FC<Props> = ({ data, isLoading, emptyDataMessage }) => {
                 <td>{row.id}</td>
                 <td>{row.city}</td>
                 <td>{row.country}</td>
-                <td>{row.countryCode}</td>
+                <td>
+                  <img
+                    src={`https://flagsapi.com/${row.countryCode}/flat/48.png`}
+                    alt={row.countryCode}
+                  />
+                </td>
               </tr>
             ))
           ) : (
